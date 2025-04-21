@@ -1,0 +1,179 @@
+.dashboardWrapper {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem; /* Aseguramos que el contenido no quede pegado a la parte superior */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .header h1 {
+    color: #333;
+    font-size: 1.8rem;
+  }
+  
+  .logoutBtn {
+    background-color: #ff4d4d;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logoutBtn:hover {
+    background-color: #d93636;
+  }
+  
+  .showListBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .showListBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .postsSection {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    flex: 1;
+    min-width: 200px;
+    font-size: 1rem;
+  }
+  
+  .filters input:focus,
+  .filters select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .resetBtn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resetBtn:hover {
+    background-color: #5a6268;
+  }
+  
+  .postList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .postCard {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .postCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .postCard h3 {
+    color: #007bff;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .postCard p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .postCard small {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .pagination button {
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #0056b3;
+  }
+  
+  .pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .status {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .error {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  

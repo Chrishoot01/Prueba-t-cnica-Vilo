@@ -2,10 +2,12 @@
 
 # Intrucciones para ejecutar el proyecto:
 
-# 1. Ingresar a la terminal y correr comando: npm install.
-# 2. Correr comando: npm run dev.
-# 3. Iniciar sesion con las siguientes credenciales de acceso;  Correo: test@example.com  / Contraseña: 123456
-# 4. Realizar la busqueda accionando al boton "Listado de post"
+
+# 1. Entrar a la carpeta desde la terminal con el comando cd nextjs-auth-app
+# 2. Ingresar a la terminal y correr comando:  npm install.
+# 3. Correr comando: npm run dev.
+# 4. Iniciar sesion con las siguientes credenciales de acceso;  Correo: test@example.com  / Contraseña: 123456
+# 5. Realizar la busqueda accionando al boton "Listado de post"
 
 # Decisiones técnicas tomadas: 
 
