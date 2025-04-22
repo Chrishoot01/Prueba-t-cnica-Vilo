@@ -1,13 +1,11 @@
 'use client';
 
-
 import type { ILoginItem } from '@/types/login.type';
-
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 import { useAuth } from '@/context/AuthContext';
-import { FaUser } from 'react-icons/fa';
+import { FaUser, FaSpinner } from 'react-icons/fa';
 
 export default function LoginPage() {
   const [data, setData] = useState<ILoginItem>({
@@ -15,6 +13,7 @@ export default function LoginPage() {
     password: ''
   });
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { login } = useAuth();
 
@@ -28,10 +27,19 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    
     if (data.email === 'test@example.com' && data.password === '123456') {
-      login(data.email);
-      router.push('/dashboard');
+      setError(null);
+      setIsLoading(true);
+
+      //Tiempo de carga, loading
+      setTimeout(() => {
+        login(data.email);
+        router.push('/dashboard');
+      }, 2500); 
     } else {
+      setIsLoading(false);
       setError('Credenciales incorrectas. Intenta nuevamente.');
     }
   };
@@ -71,8 +79,19 @@ export default function LoginPage() {
 
           {error && <p className={styles.errorMessage}>{error}</p>}
 
-          <button type="submit" className={styles.loginButton}>
-            INGRESAR
+          <button
+            type="submit"
+            className={styles.loginButton}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className={styles.loadingContent}>
+                Cargando
+                <FaSpinner className={styles.spinner} />
+              </span>
+            ) : (
+              'INGRESAR'
+            )}
           </button>
         </form>
       </div>
