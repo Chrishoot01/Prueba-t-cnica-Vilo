@@ -62,6 +62,7 @@ export default function LoginPage() {
               value={data.email}
               onChange={handleChange}
               required
+              placeholder="Ingresa tu usuario"
             />
           </div>
           <div className={styles.inputGroup}>
@@ -74,6 +75,7 @@ export default function LoginPage() {
               onChange={handleChange}
               required
               minLength={6}
+              placeholder="Ingresa tu contaseña"
             />
           </div>
 
