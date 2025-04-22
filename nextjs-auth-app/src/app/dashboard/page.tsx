@@ -9,6 +9,7 @@ import styles from './page.module.css';
 
 import PostFilters from './PostFilters';
 import PostList from './PostList';
+import { FaSpinner } from 'react-icons/fa';
 
 export default function DashboardPage() {
   const { user, logout } = useAuth();
@@ -22,6 +23,7 @@ export default function DashboardPage() {
   const [userIdFilter, setUserIdFilter] = useState('');
   const [page, setPage] = useState(1);
   const [showList, setShowList] = useState(false);
+  const [showListLoading, setShowListLoading] = useState(false);
 
   const POSTS_PER_PAGE = 10;
 
@@ -70,6 +72,14 @@ export default function DashboardPage() {
     setPage(1);
   };
 
+  const handleShowList = () => {
+    setShowListLoading(true);
+    setTimeout(() => {
+      setShowList(true);
+      setShowListLoading(false);
+    }, 1500);
+  };
+
   if (!user) return null;
 
   return (
@@ -82,14 +92,26 @@ export default function DashboardPage() {
       </div>
 
       {!showList && (
-        <button className={styles.showListBtn} onClick={() => setShowList(true)}>
-          Listado de Post
-        </button>
+        <div className={styles.centerButtonWrapper}>
+          <button
+            className={styles.showListBtn}
+            onClick={handleShowList}
+            disabled={showListLoading}
+          >
+            {showListLoading ? (
+              <span className={styles.loadingContent}>
+                Cargando <FaSpinner className={styles.spinner} />
+              </span>
+            ) : (
+              'LISTADO POST'
+            )}
+          </button>
+        </div>
       )}
 
       {showList && (
         <div className={styles.postsSection}>
-          <h2>Listado de Post</h2>
+          <h2>LISTADO POST</h2>
 
           <PostFilters
             search={search}
